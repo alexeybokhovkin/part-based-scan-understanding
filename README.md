@@ -4,13 +4,13 @@ We propose the task of part-based scene understanding of real-world 3D environme
 we detect objects, and for each object predict its decomposition into geometric part masks, which composed together 
 form the complete geometry of the observed object.
 
-<img src="pics/teaser.png" alt="Part-Based Scene Understanding" width="640">
+<img src="pics/teaser.png" alt="Part-Based Scene Understanding" width="840">
 
 [Download Paper (.pdf)](https://arxiv.org/pdf/2012.02094.pdf) 
 
 ## Demo samples
 
-<img src="pics/gallery.png" alt="Part-Based Scene Understanding" width="640">
+<img src="pics/gallery.png" alt="Part-Based Scene Understanding" width="840">
 
 ## Get started
 
