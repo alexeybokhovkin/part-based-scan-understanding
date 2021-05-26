@@ -25,7 +25,7 @@ If you want to launch training with our data, please follow the steps below:
    [ScanNet crops](xyz) \
    [PartNet GT trees](xyz) \
    [Parts priors](xyz) \
-   [Checkpoint](xyz) \
+   [Checkpoint](xyz) 
 
 3. For training, prepare augmented version of ScanNet crops with script ```dataproc/prepare_rot_aug_data.py```.
    After this, create a folder with all necessary dataset metadata using script ```dataproc/gather_all_shapes.py```
