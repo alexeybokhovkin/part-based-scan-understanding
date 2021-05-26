@@ -22,7 +22,7 @@ If you want to launch training with our data, please follow the steps below:
 1. Clone repo: ```git clone https://github.com/alexeybokhovkin/part-based-scan-understanding.git```
 
 2. Download data and/or checkpoint: \
-   [ScanNet crops](xyz) \
+   [ScanNet MLCVNet crops](xyz) \
    [PartNet GT trees](xyz) \
    [Parts priors](xyz) \
    [Checkpoint](xyz) 
