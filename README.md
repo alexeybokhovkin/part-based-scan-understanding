@@ -23,12 +23,12 @@ If you want to launch training with our data, please follow the steps below:
 
 2. Download data and/or checkpoint:
 
-3. For training, prepare augmented version of ScanNet crops with script '''dataproc/prepare_rot_aug_data.py'''.
-   After this, create a folder with all necessary dataset metadata using script '''dataproc/gather_all_shapes.py'''
+3. For training, prepare augmented version of ScanNet crops with script ```dataproc/prepare_rot_aug_data.py```.
+   After this, create a folder with all necessary dataset metadata using script ```dataproc/gather_all_shapes.py```
 
-4. Create config file similar to '''configs/config_gnn_scannet_allshapes.yaml''' (you need to provide paths to some directories and files)
+4. Create config file similar to ```configs/config_gnn_scannet_allshapes.yaml``` (you need to provide paths to some directories and files)
 
-5. Launch training with '''train_gnn_scannet.py'''
+5. Launch training with ```train_gnn_scannet.py```
 
 ## Citation
 
