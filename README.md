@@ -22,11 +22,11 @@ If you want to launch training with our data, please follow the steps below:
 1. Clone repo: ```git clone https://github.com/alexeybokhovkin/part-based-scan-understanding.git```
 
 2. Download data and/or checkpoint: \
-   [ScanNet MLCVNet crops (finetune) [894M]](xyz) \
-   [ScanNet clean crops (pretraining) [995M]](xyz) \
-   [PartNet GT trees [103M]](xyz) \
-   [Parts priors [169M]](xyz) \
-   [Checkpoint [19M]](xyz) 
+   [ScanNet MLCVNet crops (finetune) [894M]](http://kaldir.vc.in.tum.de/abokhovkin/TowardsPartBased/scannet_mlcvnet.zip) \
+   [ScanNet clean crops (pretraining) [995M]](http://kaldir.vc.in.tum.de/abokhovkin/TowardsPartBased/scannet_clean.zip) \
+   [PartNet GT trees [103M]](http://kaldir.vc.in.tum.de/abokhovkin/TowardsPartBased/trees.zip) \
+   [Parts priors [169M]](http://kaldir.vc.in.tum.de/abokhovkin/TowardsPartBased/priors.zip) \
+   [Checkpoint [19M]](http://kaldir.vc.in.tum.de/abokhovkin/TowardsPartBased/checkpoint.zip) 
 
 3. For training, prepare augmented version of ScanNet crops with script ```dataproc/prepare_rot_aug_data.py```.
    After this, create a folder with all necessary dataset metadata using script ```dataproc/gather_all_shapes.py```
