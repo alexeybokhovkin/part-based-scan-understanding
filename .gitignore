@@ -116,7 +116,6 @@ venv.bak/
 ########################
 data/
 struct_data/
-configs/**
 notebooks/
 notebooks_test/
 notebooks_work/
