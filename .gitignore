@@ -126,7 +126,6 @@ experiments/
 .DS_Store
 ._.DS_Store
 ._*
-*.yaml
 
 test_notebooks/
 logs/
