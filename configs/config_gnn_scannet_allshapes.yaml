@@ -1,0 +1,96 @@
+# paths & general
+datadir: <...>/part-based-scan-understanding/data
+root: <...>/part-based-scan-understanding/data/hierarchies_32_1lvl_filled_v2/all_scannet_geo
+hierarchies: <...>/part-based-scan-understanding/data/hierarchies_32_1lvl_filled_v2/all_scannet_geo
+priors_path: <...>/part-based-scan-understanding/data/priors_chairs_tables/all_priors_32
+partnet_to_dirs_path: <...>/part-based-scan-understanding/data/hierarchies_32_1lvl_filled_v2/all_scannet_geo/partnet_to_dirs.pkl
+priors_dict_path: <...>/part-based-scan-understanding/data/hierarchies_32_1lvl_filled_v2/all_scannet_geo/parts_to_priors.pkl
+train_samples: train.txt
+val_samples: val.txt
+shapes_to_scans_path: <...>/part-based-scan-understanding/dictionaries/Shapenet_objects_in_Scannet_scans(Scan2CAD).json
+parts_to_shapes_path: <...>/part-based-scan-understanding/dictionaries/parts_to_shapes.json
+cats_to_shapes_path: <...>/part-based-scan-understanding/dictionaries/Shapenet_cats_to_shapes.json
+shapenet_voxelized_path: <...>/part-based-scan-understanding/Assets/partnet-full-voxelized-32
+checkpoint_dir: <...>/part-based-scan-understanding/logs/
+version: mlcvnet_train
+resume_from_checkpoint: <...>
+
+# data & dataset
+dataset: shapenet
+shuffle: true
+batch_size: 8
+testset_split_ratio: 0.0625
+ignore_index: 0
+load_geo: true
+data_features: 'object'
+drop_last: true
+
+# model
+## general
+model: Unet3DGNNPartnet
+weights_mode: null
+manual_seed: 9221
+max_epochs: 300
+val_check_interval: 1.0
+
+## GPUs, workers, lightning settings
+gpus: 1
+num_workers: 6
+distributed_backend: dp
+amp_level: O2
+device: cuda
+
+## optimizer
+lr_scheduler: MultiStepLR
+gamma: 0.8
+decay_every: 8
+milestones: [75, 125, 175, 200]
+learning_rate: 0.001
+weight_decay: 0.005
+
+## loss
+loss_weight_geo: 2
+loss_weight_geo_prior: 10
+loss_weight_leaf: 0.5
+loss_weight_exists: 2
+loss_weight_semantic: 2
+loss_weight_edge: 0.5
+loss_weight_children: 1
+loss_weight_root_cls: 1
+loss_weight_rotation: 1
+
+## layers
+enc_out_f_maps: [16, 32, 64, 128]
+enc_in_f_maps: [1, 16, 32, 64]
+dec_out_f_maps: [128, 64, 32, 16, 1]
+dec_in_f_maps: [128, 128, 128, 64, 32]
+enc_conv_kernel_sizes: [5, 3, 5, 3]
+dec_conv_kernel_sizes: [3, 3, 5, 3, 3]
+enc_strides: [2, 1, 2, 1]
+enc_paddings: [2, 1, 2, 1]
+dec_strides: [1, 1, 1, 1, 1]
+dec_paddings: [1, 1, 2, 1, 1]
+last_pooling_size: 1
+scale_factors: [2, 2, 4, 2, 2]
+in_channels: 1
+num_convs_per_block: 1
+layer_order: cgr
+layer_orders: ['cgr', 'cgr', 'cgr', 'cr']
+num_groups: 8
+enc_number_of_fmaps: 4
+dec_number_of_fmaps: 5
+node_symmetric_type: 'max'
+edge_symmetric_type: 'avg'
+num_iterations: 2
+edge_type_num: 2
+recursive_feat_size: 128
+geo_feature_size: 128
+recursive_hidden_size: 128
+
+## architecture
+enc_hier: false
+edgeless: false
+split_subnetworks: false
+loss_children: false
+encode_mask: true
+shape_priors: true
